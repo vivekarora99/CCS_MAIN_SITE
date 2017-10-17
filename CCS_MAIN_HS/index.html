@@ -1,0 +1,213 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>CCS OFFICIAL</title>
+		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<style>
+			body{
+				background-image:url("images/wallppr.jpg");
+				background-attachment:fixed;
+				margin:0;
+			}
+			#first_container{
+				height:100%;
+				display:grid;
+				grid-template-columns:7% 7% 7% 7% auto 7% 7% 7% 7%;
+				grid-template-rows:7% 7% 7% 7% auto 7% 7% 7% 7%;
+			}
+			#first_vw{
+				grid-row:2/8;
+				grid-column:3/8;
+				text-align:center;
+			}
+			#txt_main{
+				color:#28a745;
+				font-family: 'Orbitron', sans-serif;
+				font-weight:bolder;
+				letter-spacing:1px;
+				font-size:10vw;
+			}
+			#txt_brief{
+				color:white;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+				font-size:3vw;
+				margin:4% 0% 4% 4%;
+			}
+			#second_container{
+				display:grid;
+				grid-template-columns:7% 7% 7% 7% auto 7% 7% 7% 7%;
+				grid-template-rows:7% 7% 7% 7% auto 7% 7% 7% 7%;
+				height:100%;
+			}
+			#nav_bar{
+				grid-row:1/2;
+				grid-column:1/end;
+				text-align:center;
+				padding:0px 0px 20px 0px;
+				background-color:#464545;
+				opacity:0.9;
+				border-bottom-left-radius:4px;
+				border-top-right-radius:4px;
+				box-shadow:0px 10px 20px #464545;
+			}
+			.stick{
+				width:100%;
+			}
+			#nav_bar.stick{
+				margin-top:0 !important;
+				top: 0;
+				position:fixed;
+				z-index:10000;
+			}
+			#about{
+				grid-row:3/9;
+				grid-column:1/end;
+				text-align:center;
+				background-color:#a0a0a0;
+				opacity:0.8;
+				padding:5% 10% 0 10%;
+			}
+			#abt_head{
+				color:white;
+				font-family: 'Montserrat', sans-serif;
+				font-size:4vw;
+				margin:5%;
+				letter-spacing: 0px;
+			}
+			#abt_cont{
+				color:black;
+				font-family: 'Montserrat', sans-serif;
+				font-size:2vw;
+				opacity:0.7;
+				letter-spacing:1px;
+				word-spacing:2.5px;
+			}
+			.nav_ul{
+				display:inline;
+				margin-right:5%;
+				color:#28a745;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+				font-size:1.5vw;
+				font-weight:bold;
+				padding:0.2% 2% 1.2% 2%;
+				border-radius:6px;
+				transition: 0.12s;
+				height:100%;
+			}
+			.nav_ul:hover{
+				cursor:pointer;
+				background-color:#303030;
+			}
+			#down{
+				margin-top:-2%;
+				margin-left:3%;
+				height:20%;
+				width:15%;
+				opacity:0.3;
+				transition: 0.4s;
+			}
+			#down:hover{
+				margin-top:0.5%;
+				opacity:0.8;
+			}
+			#third_container{
+				height:100%;
+				display:grid;
+				grid-template-columns:7% 7% 7% 7% auto 7% 7% 7% 7%;
+				grid-template-rows:7% 7% 7% 7% auto 7% 7% 7% 7%;
+			}
+			#event_cont_back_1{
+				grid-row:1/end;
+				grid-column:1/end;
+				background-color:#1976d2;
+				opacity:1;
+			}
+			#event_cont_back_2{
+				grid-row:5/end;
+				grid-column:1/end;
+				background-color:#303030;
+				opacity:1;
+			}
+			#event_cont{
+				grid-row:3/9;
+				grid-column:1/end;
+			}
+			#event_hdr{
+				color:white;
+				font-family: 'Montserrat', sans-serif;
+				font-size:4vw;
+				letter-spacing: 0px;
+				text-align:center;
+			}
+		</style>
+		<script>
+			//for nav-bar fix
+			function sticky_relocate() {
+    			var window_top = $(window).scrollTop();
+    			var div_top = $('#ontop_nav_bar').offset().top;
+    			if (window_top > div_top) {
+        			$('#nav_bar').addClass('stick');
+        			$('#ontop_nav_bar').height($('#nav_bar').outerHeight());
+    			}else {
+        			$('#nav_bar').removeClass('stick');
+	    			$('#ontop_nav_bar').height(0);
+    			}
+
+    			if( window_top >= 1.7*(screen.availHeight) ){
+    				$("#nav_ul1").css("color","#1976d2");
+    				$("#nav_ul2").css("color","#1976d2");
+    				$("#nav_ul3").css("color","#1976d2");
+    				$("#nav_ul4").css("color","#1976d2");
+    				$("#nav_ul5").css("color","#1976d2");
+    			}
+			}
+
+			$(function() {
+    			$(window).scroll(sticky_relocate);
+				sticky_relocate();
+			});
+		</script>
+	</head>
+	<body>
+
+
+		<div id="first_container">
+			<div id="first_vw">
+				<img src="images/ccs_logo2 (1).png" id="top_logo" style="margin-top:-2%;margin-left:3%;">
+				<div id="txt_main">CCS</div>
+				<div id="txt_brief">The Biggest Computing Society of Thapar University</div>
+				<img src="images/down.png" id="down">
+			</div>
+		</div>
+
+
+		<div id="second_container">
+			<div id="ontop_nav_bar"></div>
+			<div id="nav_bar">
+				<div id="nav_ul1" class="nav_ul">HOME</div>
+				<div id="nav_ul2" class="nav_ul">ABOUT</div>
+				<div id="nav_ul3" class="nav_ul">EVENTS</div>
+				<div id="nav_ul4" class="nav_ul">GALLERY</div>
+				<div id="nav_ul5" class="nav_ul" style="margin-right:0;">CONTACT</div>
+			</div>
+			<div id="about">
+				<div id="abt_head">About Us</div>
+				<div id="abt_cont">CCS:Creative Computing Society is one of the best technical society of Thapar. It not only focuses on how the events are being conducted but are focused on the way that how the one can learn or improve his/her technical knowledge.</div>
+			</div>
+		</div>
+
+
+		<div id="third_container">
+			<div id="event_cont_back_1"></div>
+			<div id="event_cont_back_2"></div>
+			<div id="event_cont">
+				<div id="event_hdr">Upcoming Events</div>
+				<div id="event_stuff">
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
