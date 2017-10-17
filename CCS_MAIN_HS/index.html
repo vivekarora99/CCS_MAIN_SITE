@@ -41,26 +41,6 @@
 				grid-template-rows:7% 7% 7% 7% auto 7% 7% 7% 7%;
 				height:100%;
 			}
-			#nav_bar{
-				grid-row:1/2;
-				grid-column:1/end;
-				text-align:center;
-				padding:0px 0px 20px 0px;
-				background-color:#464545;
-				opacity:0.9;
-				border-bottom-left-radius:4px;
-				border-top-right-radius:4px;
-				box-shadow:0px 10px 20px #464545;
-			}
-			.stick{
-				width:100%;
-			}
-			#nav_bar.stick{
-				margin-top:0 !important;
-				top: 0;
-				position:fixed;
-				z-index:10000;
-			}
 			#about{
 				grid-row:3/9;
 				grid-column:1/end;
@@ -83,22 +63,6 @@
 				opacity:0.7;
 				letter-spacing:1px;
 				word-spacing:2.5px;
-			}
-			.nav_ul{
-				display:inline;
-				margin-right:5%;
-				color:#28a745;
-				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-				font-size:1.5vw;
-				font-weight:bold;
-				padding:0.2% 2% 1.2% 2%;
-				border-radius:6px;
-				transition: 0.12s;
-				height:100%;
-			}
-			.nav_ul:hover{
-				cursor:pointer;
-				background-color:#303030;
 			}
 			#down{
 				margin-top:-2%;
@@ -141,6 +105,72 @@
 				letter-spacing: 0px;
 				text-align:center;
 			}
+
+			/* For Nav Bar */
+			#menu {
+				margin-left: 300px;
+			}
+			ul {
+    	list-style-type:none;
+			display: inline-block;
+    	padding:0;
+    	position: absolute;
+		}
+
+		li {
+    	display:inline-block;
+    	float: left;
+    	margin-right: 1px;
+		}
+
+
+		li a {
+    	display:block;
+    	min-width:140px;
+    	height: 50px;
+    	text-align: center;
+    	line-height: 50px;
+    	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    	color: #fff;
+    	background: #2f3036;
+    	text-decoration: none;
+		}
+
+		li:hover a {
+    	background: #19c589;
+		}
+
+		li:hover ul a {
+    	background: #f3f3f3;
+    	color: #2f3036;
+    	height: 40px;
+    	line-height: 40px;
+		}
+
+		li:hover ul a:hover {
+    	background: #19c589;
+    	color: #fff;
+		}
+
+
+		li ul {
+    	display: none;
+		}
+
+		li ul li {
+    	display: block;
+    	float: none;
+		}
+
+		li ul li a {
+    	width: auto;
+    	min-width: 100px;
+    	padding: 0 20px;
+		}
+
+		ul li a:hover + .hidden, .hidden:hover {
+    	display: block;
+		}
 		</style>
 		<script>
 			//for nav-bar fix
@@ -155,7 +185,7 @@
 	    			$('#ontop_nav_bar').height(0);
     			}
 
-    			if( window_top >= 1.5*(screen.availHeight) ){
+    			if( window_top >= 1.7*(screen.availHeight) ){
     				$("#nav_ul1").css("color","#1976d2");
     				$("#nav_ul2").css("color","#1976d2");
     				$("#nav_ul3").css("color","#1976d2");
@@ -171,27 +201,32 @@
 		</script>
 	</head>
 	<body>
-
-
 		<div id="first_container">
+			<ul id="menu">
+			        <li><a href="#">Home</a></li>
+			        <li>
+			            <a href="#">About </a>
+			        </li>
+			        <li>
+			            <a href="#">Events +</a>
+			            <ul class="hidden">
+			                <li><a href="#">Lorem</a></li>
+			                <li><a href="#">Ipsum</a></li>
+			                <li><a href="#">Dolor</a></li>
+			            </ul>
+			        </li>
+			        <li><a href="#"> Team </a></li>
+			        <li><a href="#">Contact</a></li>
+			    </ul>
 			<div id="first_vw">
-				<img src="images/ccs_logo2 (1).png" id="top_logo" style="margin-top:-2%;margin-left:3%;">
+				<img src="images/ccs_logo2 (1).png" id="top_logo" style="margin-top:-2%;margin-left:3%; padding-top: 50px;">
 				<div id="txt_main">CCS</div>
 				<div id="txt_brief">The Biggest Computing Society of Thapar University</div>
 				<img src="images/down.png" id="down">
 			</div>
 		</div>
 
-
 		<div id="second_container">
-			<div id="ontop_nav_bar"></div>
-			<div id="nav_bar">
-				<div id="nav_ul1" class="nav_ul">HOME</div>
-				<div id="nav_ul2" class="nav_ul">ABOUT</div>
-				<div id="nav_ul3" class="nav_ul">EVENTS</div>
-				<div id="nav_ul4" class="nav_ul">GALLERY</div>
-				<div id="nav_ul5" class="nav_ul" style="margin-right:0;">CONTACT</div>
-			</div>
 			<div id="about">
 				<div id="abt_head">About Us</div>
 				<div id="abt_cont">CCS:Creative Computing Society is one of the best technical society of Thapar. It not only focuses on how the events are being conducted but are focused on the way that how the one can learn or improve his/her technical knowledge.</div>
@@ -205,7 +240,7 @@
 			<div id="event_cont">
 				<div id="event_hdr">Upcoming Events</div>
 				<div id="event_stuff">
-					
+
 				</div>
 			</div>
 		</div>
